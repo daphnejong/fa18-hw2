@@ -1,0 +1,21 @@
+<% if @cities.empty? %>
+There's no cities to diplay.
+
+<p><%= button_to 'Create new', {:controller => "cities", :action => "new"} , :method=>:get, local: true  %></p>
+<% end %>
+
+<% @cities.values.each do |c| %>
+<p>
+<h3><%= c.name %></h3>
+<h4>Population</h4>
+<%= c.population %>
+
+<h4>Landmark</h4>
+<%= c.landmark %>
+</p>
+<p><%= button_to 'Update', {:controller => "cities", :action => "updateform", :city => c.name, :population=> c.population, :landmark=> c.landmark} , :method=>:post, local: true  %></p>
+<br>
+
+<p>Want more cities?</p>
+<p><%= button_to 'Create new', {:controller => "cities", :action => "new"} , :method=>:get, local: true  %></p>
+<% end %>

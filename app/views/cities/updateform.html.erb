@@ -1,0 +1,14 @@
+<h3>Update </h3>
+
+<%= form_with local: true, method: 'get', url: "edit" do |form| %>
+
+	City:<br>
+	<%= form.text_field :city, :value => params[:city], readonly: true %> <br>
+	Population: <br>
+	<%= form.number_field :population, :value => params[:population] %>
+	<br>
+	Most Famous Landmark: <br>
+	<%= form.text_field :landmark, :value => params[:landmark] %>
+	<br>
+	<%= form.submit "Update" %>
+<% end %>

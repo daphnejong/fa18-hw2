@@ -1,0 +1,14 @@
+<h3>Create a new city</h3>
+
+<%= form_with local: true, method: 'get', url: "create" do |form| %>
+
+	City:<br>
+	<%= form.text_field :city %> <br>
+	Population: <br>
+	<%= form.number_field :population %>
+	<br>
+	Most Famous Landmark: <br>
+	<%= form.text_field :landmark %>
+	<br>
+	<%= form.submit "Submit" %>
+<% end %>
